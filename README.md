@@ -8,7 +8,11 @@ During SolidHack 2024 competition I have got running the Braid-HTTP and Braid-Te
 
 ![](/public/demo.gif)
 
-To run the demo:
+## Demo demo app is running at https://app.krestianstvo.org
+
+There some issues with Vercel deployment concerning configuration of ```maxDuration``` for the api functions.
+
+To run the demo locally:
 
 1. Clone this repo: ```git clone https://github.com/NikolaySuslov/solid-braid```
 2. Start the SoliStart local server with ```npm run dev```
