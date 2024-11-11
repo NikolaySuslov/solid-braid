@@ -10,7 +10,7 @@ During SolidHack 2024 competition I have got running the Braid-HTTP and Braid-Te
 
 To run the demo:
 
-1. Clone this repo: ```git clone ```
+1. Clone this repo: ```git clone https://github.com/NikolaySuslov/solid-braid```
 2. Start the SoliStart local server with ```npm run dev```
 3. Open web browser with an url: http://localhost:3000
 4. Open another instance of web browser with the same url
