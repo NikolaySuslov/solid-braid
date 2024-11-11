@@ -1,6 +1,13 @@
 {
   "name": "solid-braid",
-  "type": "module",
+  "description": "Towards local-first sync engine SDK based on SolidStart & BraidJS",
+  "version": "0.0.1",
+  "author": "Nikolay Suslov",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NikolaySuslov/solid-braid"
+  },
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
