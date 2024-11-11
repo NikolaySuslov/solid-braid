@@ -11,6 +11,11 @@ const handler = async (req, res) => {
     free_the_cors(req, res)
     if (req.method === 'OPTIONS') return
 
+    //  Create some initial text for new documents
+    if (!(await braid_text.get(req.url, {})).version.length) {
+      await braid_text.put(req.url, {body: 'This is a fresh blank document, ready for you to edit.' })
+    }
+
    await braid_text.serve(req, res)
   }
 }

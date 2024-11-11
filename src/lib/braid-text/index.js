@@ -162,9 +162,9 @@ braid_text.serve = async (req, res, options = {}) => {
                 patches = null
             }
 
-            let re = (typeof resource == 'string') ? await get_resource(resource) : resource
+            //let re = (typeof resource == 'string') ? await get_resource(resource) : resource
 
-            braid_text.put(resource, { peer, version: req.version, parents: req.parents, patches, body, merge_type }, re)
+            await braid_text.put(resource, { peer, version: req.version, parents: req.parents, patches, body, merge_type })
             
             res.setHeader("Version", resource.doc.getRemoteVersion().map((x) => x.join("-")).sort())
 
@@ -305,20 +305,23 @@ braid_text.forget = async (key, options) => {
     else resource.clients.delete(options)
 }
 
-braid_text.put = (key, options, resource) => {
+braid_text.put = async (key, options) => {
     let { version, patches, body, peer } = options
 
     // support for json patch puts..
-    if (patches?.length && patches.every(x => x.unit === 'json')) {
-        // let resource = (typeof key == 'string') ? await get_resource(key) : key
-        
+
+    let resource = (typeof key == 'string') ? await get_resource(key) : key
+
+    if (resource && (patches?.length && patches.every(x => x.unit === 'json'))) {
+       
+        console.log("RS: ", resource)
         let x = JSON.parse(resource.doc.get())
         for (let p of patches)
             apply_patch(x, p.range, JSON.parse(p.content))
 
-        return braid_text.put(key, {
+        return await braid_text.put(key, {
             body: JSON.stringify(x, null, 4)
-        }, resource)
+        })
     }
 
     if (version) validate_version_array(version)
