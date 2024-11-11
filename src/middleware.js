@@ -11,16 +11,16 @@ const handler = async (req, res) => {
     free_the_cors(req, res)
     if (req.method === 'OPTIONS') return
 
-    await braid_text.serve(req, res)
+   await braid_text.serve(req, res)
   }
 }
 
 export default createMiddleware({
   onRequest: [
-    event => {
+    async (event) => {
       let req = event.nativeEvent.node.req
       let res = event.nativeEvent.node.res
-      handler(req, res)
+      await handler(req, res)
     }
   ]
   // onBeforeResponse: [
