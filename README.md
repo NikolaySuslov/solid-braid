@@ -1,10 +1,10 @@
 # Towards local-first sync engine SDK based on SolidStart & BraidJS
 
-The big idea of SolidStart & BraidJS SDK is to provide the instrumentation for the SolidJS applications state synchronization across network using Braid-HTTP protocol middleware on top of SolidStart fullstack platform. Since SolidJS signals and memos form a DAG (directed acyclic graph, aka dependency graph), choosing BraidJS that also operates on terms of Time and Space DAGs and being local-first, seems to be the most suitable solution. One of the uniqueness of using Braid is that it uses the standard HTTP protocol instead of Websockets for the state sync.
+The big idea of SolidStart & BraidJS SDK is to provide the instrumentation for the SolidJS applications state synchronization across network using Braid-HTTP protocol middleware on top of [SolidStart](https://start.solidjs.com/) fullstack platform. Since [SolidJS](https://docs.solidjs.com/) signals and memos form a DAG (directed acyclic graph, aka dependency graph), choosing BraidJS that also operates on terms of Time and Space DAGs and being local-first, seems to be the most suitable solution. One of the uniqueness of using Braid is that it uses the standard HTTP protocol instead of Websockets for the state sync.
 
 ## What functions does SDK provide right now?
 
-During SolidHack 2024 competition I have got running the Braid-HTTP and Braid-Text with Simpleton client on top of SolidStart. The included example shows how a collaborative text editor as a component is working in any SolidJS app. The Braid-HTTP extension is loaded from the official npm repository without modifications. Braid-Text extension and Simpleton are modified to suit SolidStart framework.
+During [SolidHack 2024](https://hack.solidjs.com/) competition I have got running the Braid-HTTP and Braid-Text with Simpleton client on top of SolidStart. The included example shows how a collaborative text editor as a component is working in any SolidJS app. The Braid-HTTP extension is loaded from the official npm repository without modifications. Braid-Text extension and Simpleton are modified to suit SolidStart framework.
 
 ![](/public/demo.gif)
 
@@ -19,6 +19,9 @@ To run the demo locally:
 3. Open web browser with an url: http://localhost:3000
 4. Open another instance of web browser with the same url
 5. In the textarea enter any text and observe it's syncronization
+
+You can create isolated collaborative text areas specifying parameter in the url, like:  
+http://localhost:3000/editor?k=myText
 
 
 ## What is Braid?
