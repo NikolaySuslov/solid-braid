@@ -44,7 +44,7 @@ export default async function simpleton_client(url, { apply_remote_update, gener
     var max_outstanding_changes = 10
     var ac = new AbortController()
 
-    await braid_fetch(url, {
+    braid_fetch(url, {
         headers: { "Merge-Type": "simpleton",
             ...(content_type ? {Accept: content_type} : {}) },
         subscribe: true,
