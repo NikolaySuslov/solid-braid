@@ -11,7 +11,8 @@ export default function Editor(props) {
   const [simpleton] = createResource(async () => {
 
     const response = await simpleton_client(url, {
-      apply_remote_update: ({ state, patches }) => {
+      apply_remote_update: ({ state, patches, version }) => {
+        console.log(JSON.stringify(patches), version)
         if (state !== undefined) texty.value = state;
         else apply_patches_and_update_selection(texty, patches);
         return texty.value;

@@ -21,8 +21,6 @@ export function diff(before, after) {
 
 export function apply_patches_and_update_selection(textarea, patches) {
 
-    console.log(JSON.stringify(patches))
-
     let offset = 0;
     for (let p of patches) {
         p.range[0] += offset;
