@@ -27,7 +27,7 @@ export default function Editor(props) {
         texty.style.border = '4px solid red'
       }
     })
-    return await response
+    return response
   })
 
   // const result = (msg) => { console.log(msg) }
@@ -56,7 +56,7 @@ export default function Editor(props) {
           ref={texty}
           value=""
           id="texty"
-          oninput={simpleton().changed}
+          oninput={simpleton()?.changed}
           style="width: 100%; min-height: 200px; box-sizing: border-box; font-size: xx-large; field-sizing: content;"
         ></textarea></Show>
     </div>

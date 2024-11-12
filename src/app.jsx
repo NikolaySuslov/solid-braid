@@ -10,7 +10,8 @@ export default function App() {
       root={props => (
         <MetaProvider>
           <Title>SolidStart - BraidJS</Title>
-          <a href="/">Index</a>
+          <a href="/" target="_self">Index</a>
+          <a href="/about" target="_self">About</a>
           <Suspense>{props.children}</Suspense>
         </MetaProvider>
       )}
