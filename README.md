@@ -8,7 +8,8 @@ During [SolidHack 2024](https://hack.solidjs.com/) competition I have got runnin
 
 ![](/public/demo.gif)
 
-## Demo demo app is running at https://app.krestianstvo.org
+## Demo demo app is running at https://editor.krestianstvo.org
+The demo app shows a simple implmentation of adding the collaborative features into the Quill text editor (WIP) (https://github.com/NikolaySuslov/solid-braid-quill)
 
 There some issues with Vercel deployment concerning configuration of ```maxDuration``` for the api functions.
 
